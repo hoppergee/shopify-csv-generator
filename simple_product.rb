@@ -10,7 +10,7 @@ class SimpleProduct < Product
 
     @parent_product = parent_product
 
-    @keys = [:handle, :title, :body, :vendor, :type, :tags, :published, :option1_name, :option1_value, :option2_name, :option2_value, :option3_name, :option3_value, :variant_sku, :variant_grams, :variant_inventory_tracker, :variant_inventory_policy, :variant_inventory_quantity, :variant_fullfilment_service, :variant_price, :variant_compare_at_price, :variant_requires_shipping, :variant_taxable, :variant_barcode, :image_src, :image_alt_text, :gift_card, :google_shopping_mpn, :google_shopping_age_group, :google_shopping_gender, :google_shopping_google_product_category, :seo_title, :seo_description, :google_shopping_adwords_grouping, :google_shopping_adwords_labels, :google_shopping_condition, :google_shopping_custom_product, :google_shopping_custom_label_0, :google_shopping_custom_label_1, :google_shopping_custom_label_2, :google_shopping_custom_label_3, :google_shopping_custom_label_4, :variant_image, :variant_weight_unit]
+    @keys = [:handle, :title, :body, :vendor, :product_category, :type, :tags, :published, :option1_name, :option1_value, :option2_name, :option2_value, :option3_name, :option3_value, :variant_sku, :variant_grams, :variant_inventory_tracker, :variant_inventory_quantity, :variant_inventory_policy, :variant_fullfilment_service, :variant_price, :variant_compare_at_price, :variant_requires_shipping, :variant_taxable, :variant_barcode, :image_src, :image_position, :image_alt_text, :gift_card, :seo_title, :seo_description, :google_shopping_google_product_category, :google_shopping_gender, :google_shopping_age_group, :google_shopping_mpn, :google_shopping_adwords_grouping, :google_shopping_adwords_labels, :google_shopping_condition, :google_shopping_custom_product, :google_shopping_custom_label_0, :google_shopping_custom_label_1, :google_shopping_custom_label_2, :google_shopping_custom_label_3, :google_shopping_custom_label_4, :variant_image, :variant_weight_unit, :variant_tax_code, :cost_per_item, :price_international, :compare_at_price_international, :status]
 
     populate_values @keys
   end
@@ -23,6 +23,9 @@ class SimpleProduct < Product
   end
   def gen_vendor
     ''
+  end
+  def gen_product_category
+    ""
   end
   def gen_type
     ''
@@ -63,28 +66,31 @@ class SimpleProduct < Product
   def gen_image_src
     ''
   end
+  def gen_image_position
+    return ''
+  end
   def gen_image_alt_text
     ''
   end
   def gen_gift_card
     ''
   end
-  def gen_google_shopping_mpn
+  def gen_seo_title
     ''
   end
-  def gen_google_shopping_age_group
-    ''
-  end
-  def gen_google_shopping_gender
+  def gen_seo_description
     ''
   end
   def gen_google_shopping_google_product_category
     ''
   end
-  def gen_seo_title
+  def gen_google_shopping_gender
     ''
   end
-  def gen_seo_description
+  def gen_google_shopping_age_group
+    ''
+  end
+  def gen_google_shopping_mpn
     ''
   end
   def gen_google_shopping_adwords_grouping
@@ -119,5 +125,20 @@ class SimpleProduct < Product
   end
   def gen_variant_weight_unit
     ''
+  end
+  def gen_variant_tax_code
+    return ''
+  end
+  def gen_cost_per_item
+    return ''
+  end
+  def gen_price_international
+    return ''
+  end
+  def gen_compare_at_price_international
+    return ''
+  end
+  def gen_status
+    return ''
   end
 end
